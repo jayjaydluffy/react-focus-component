@@ -16,9 +16,6 @@
     "options": {
         "mocha": "--require scripts/mocha-runner --require scripts/setupTests.js src/**/__tests__/**/*.js"
     },
-    "engines": {
-        "node": "^9.3.0"
-    },
     "devDependencies": {
         "babel-cli": "^6.6.4",
         "babel-core": "^6.26.3",
@@ -57,7 +54,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/hofnarwillie/react-focus-component.git"
+        "url": "git+https://github.com/jayjaydluffy/react-focus-component.git"
     },
     "keywords": [
         "react",
