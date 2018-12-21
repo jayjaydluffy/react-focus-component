@@ -171,7 +171,7 @@ class FocusOverlay extends React.Component {
 
                 <div style={styles.left} onClick={onExit}>{ this.renderChildren('left', children, target) }</div>
                 <div style={styles.right} onClick={onExit}>{ this.renderChildren('right', children, target) }</div>
-                
+
                 <div style={styles.bottomleft} onClick={onExit}>{ this.renderChildren('bottomleft', children, target) }</div>
                 <div style={styles.bottom} onClick={onExit}>{ this.renderChildren('bottom', children, target) }</div>
                 <div style={styles.bottomright} onClick={onExit}>{ this.renderChildren('bottomright', children, target) }</div>
@@ -189,7 +189,11 @@ FocusOverlay.propTypes = {
 };
 
 FocusOverlay.defaultProps = {
-    target: 'bottom'
+    target: 'bottom',
+    moreStyles: {
+        zIndex: 1,
+        position: 'fixed'
+    }
 };
 
 export default FocusOverlay;
