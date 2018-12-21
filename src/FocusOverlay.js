@@ -3,13 +3,13 @@ import PropTypes from 'prop-types'
 import { isEmptyArray } from './arrays';
 import getOuterBoundries from './get-outer-boundries';
 
-const MAX_OPACITY = 0.8;
+const MAX_OPACITY = 0.5;
 const TRANSITION_SPEED = 0.3;
 
 export const getOverlayStyles = (x, y, width, height, animate) => {
     const shared = {
         position: 'fixed',
-        backgroundColor: '#000',
+        backgroundColor: '#5E5E5E',
         transition: animate ? `all ${TRANSITION_SPEED}s linear` : 'none'
     };
 
@@ -149,7 +149,7 @@ class FocusOverlay extends React.Component {
     }
 
     render() {
-        const { focusComponent, onExit, children, target } = this.props;
+        const { focusComponent, onExit, children, target, moreStyles } = this.props;
         let styles;
         this.tryMove(focusComponent);
 
@@ -159,7 +159,8 @@ class FocusOverlay extends React.Component {
         const containerStyle = {
             opacity,
             transition: `opacity ${TRANSITION_SPEED}s linear`,
-            visibility
+            visibility,
+            ...moreStyles
         };
 
         return (
@@ -183,7 +184,8 @@ FocusOverlay.propTypes = {
     target: PropTypes.oneOf(['topleft', 'top', 'topright', 'left', 'right', 'bottomleft', 'bottom', 'bottomright']),
     focusComponent: PropTypes.any,
     onExit: PropTypes.func,
-    children: PropTypes.node
+    children: PropTypes.node,
+    moreStyles: PropTypes.object
 };
 
 FocusOverlay.defaultProps = {
