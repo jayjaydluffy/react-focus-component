@@ -1,5 +1,5 @@
 {
-    "name": "react-focus-component",
+    "name": "@jayjaydluffy/react-focus-component",
     "version": "1.2.2",
     "description": "A react component that brings other components into visual focus/highlight by placing an overlay over all other elements on the page",
     "main": "index.js",
